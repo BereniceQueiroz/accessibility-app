@@ -9,6 +9,10 @@ import { Search } from '../Search';
 
 export function Matches() {
 
+  function handleAccessibilityAction(actionName: string) {
+    console.log('Ação usuário:', actionName )
+  }
+
   return (
     <Container>
       <Title>Próximas partidas</Title>
@@ -21,6 +25,11 @@ export function Matches() {
         renderItem={({ item }) => (
           <Match
             data={item}
+            accessibilityActions={[
+              { name: 'activate', label: 'Ver detalhes do jogo'},
+              { name: 'longpress', label: 'Atualizar placar dp jogo'}
+            ]}
+            onAccessibilityAction={e => handleAccessibilityAction(e.nativeEvent.actionName)}
           />
         )}
       />

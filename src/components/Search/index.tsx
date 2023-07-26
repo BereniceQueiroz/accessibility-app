@@ -23,6 +23,9 @@ export function Search() {
       <Button
         onPress={() => setLoading(!loading)}
         disabled={loading}
+        accessibilityHint='Consultar partidas pelo nome do time'
+        accessibilityState={{disabled: loading}}
+        accessibilityValue={{ text: loading ? 'Buscando partidas, aguarde' : 'Botão de pesquisa disponível novamente' }}
       >
         {
           loading

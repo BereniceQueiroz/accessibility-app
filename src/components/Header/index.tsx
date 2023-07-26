@@ -10,6 +10,8 @@ export function Header() {
     <Container>
       <Avatar
         source={{ uri: 'https://github.com/rodrigorgtic.png' }}
+        accessible
+        accessibilityLabel='Imagem de perfil do usuário'
       />
 
       <Logo source={logoImg} />
